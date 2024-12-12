@@ -1,42 +1,15 @@
-let numero1 = 5;
-const numero2 = 10;
+let calcular = document.getElementById('calcular');
 
-numero2 = 20
-let nome = "odair"
-let n1 = 10;
-let n2 = "10";
+calcular.addEventListener('click', function() {
+  // Pegar os valores do inputs
+  let numero1 = parseFloat(document.getElementById('numero1').value);
+  let numero2 = parseFloat(document.getElementById('numero2').value);
 
-console.log(soma);
-console.log(n1 === n2);
-
-soma = n1 + n2
-soma = numero1 + numero2
-
-console.log(numero1, numero2)
-
-let nome "LUCAS"
-let sobrenome = "Messias"
-
-
-nomeCompleto = nome + sobrenome;
-console.log(nomeCompleto);
-
-
-let nome = prompt("digite seu nome")
-console.log(nome);
-document.body.innerHTML = <H1> $ {NOME} </H1:>
-
-
-
-
-
-let peso = prompt("digite seu peso");
-let altura = prompt("digite sua altura")
-
-let imc = peso / (altura * altura);
-
-document.body.innerHTML = 'Seu IMC é de $(imc)</h1>';
-
-
-
-
+  // Verificar se os valores são validos 
+  if (isNaN(numero1) || isNaN(numero2)) {
+    document.getElementById("resposta").textContent = "Por favor, inserir números válidos";
+  } else {
+    let soma = numero1 + numero2;
+    document.getElementById('resposta').textContent = "O resultado da soma é: " + soma;
+  }
+});
